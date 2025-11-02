@@ -1,0 +1,139 @@
+/* Warm Sepia theme styles */
+:root{
+  --sepia-bg: #f7efe6;
+  --sepia-dark: #6b4f3a;
+  --accent: #c76b2a;
+  --muted: #8d7a6a;
+}
+
+body{
+  background: var(--sepia-bg);
+  color: var(--sepia-dark);
+  font-family: 'Noto Sans Bengali', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  line-height: 1.6;
+}
+
+.bg-sepia{
+  background-color: var(--sepia-dark) !important;
+}
+
+.hero{
+  background-image: url('../assets/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.navbar.bg-sepia .navbar-brand, .navbar.bg-sepia .nav-link{
+  color: #f6efe8 !important;
+}
+
+.profile-ring{
+  width: 180px;
+  height: 180px;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  border: 6px solid rgba(255,255,255,0.08);
+}
+
+.profile-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.btn-sepia{
+  background: var(--sepia-dark);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.btn-sepia:hover{
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.card{
+  border-radius: 10px;
+}
+
+.thumb{
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.poem{
+  white-space: pre-wrap;
+  font-family: 'Noto Serif Bengali', serif;
+  font-size: 1.05rem;
+  color: var(--sepia-dark);
+}
+
+footer{
+  background: transparent;
+}
+
+/* responsive tweaks */
+@media (max-width: 767px){
+  .hero{min-height: 40vh;padding-top:80px;}
+}
+/* --- Social Media Icons Dynamic Style --- */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: white;
+  background-color: var(--sepia-dark);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Hover effect */
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.1);
+  background-color: var(--accent);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* Tooltip (Preview text) */
+.social-links a::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: -30px;
+  background-color: var(--accent);
+  color: white;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.social-links a:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
